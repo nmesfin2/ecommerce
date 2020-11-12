@@ -32,7 +32,7 @@ public class ProductDAOImpl implements ProductDAO {
 		Connection connection = DBUtils.getConnection();
 		PreparedStatement preparedStatement = null;
 		int result = 0;
-		String insertProduct = "insert into product (productId, productname, description, category,price) values(?,?,?,?,?)";
+		String insertProduct = "insert into PRODUCT (productId, productname, description, category,price) values(?,?,?,?,?)";
 		try {
 			preparedStatement = connection.prepareStatement(insertProduct);
 			preparedStatement.setInt(1,  product.getProductId());
@@ -71,7 +71,7 @@ public class ProductDAOImpl implements ProductDAO {
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
 		Product product = null;
-		String query = "select * from product where productId=?";
+		String query = "select * from PRODUCT where productId=?";
 		try {
 			preparedStatement = connection.prepareStatement(query);
 			preparedStatement.setInt(1,id);
