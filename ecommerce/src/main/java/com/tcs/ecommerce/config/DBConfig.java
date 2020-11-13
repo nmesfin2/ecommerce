@@ -19,6 +19,7 @@ public class DBConfig {
 	private Environment environment;
 	
 	@Bean
+	//@Lazy
 	public DataSource getMySQLDataSource() {
 			System.out.println("Hello from Nati");
 			BasicDataSource dataSource = new BasicDataSource();
