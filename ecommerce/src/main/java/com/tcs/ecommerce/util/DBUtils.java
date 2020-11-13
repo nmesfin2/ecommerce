@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,16 @@ import org.springframework.stereotype.Component;
 // whenever we come across to utility classes, the we should mark these casses with @Component
 @Component
 public class DBUtils {
+	
+	@PostConstruct
+	public void init() {
+		
+	}
+	
+	@PreDestroy
+	public void destroy() {
+		System.out.println("Destroy called");
+	}
 	
 	@Autowired
 	DataSource dataSource;
