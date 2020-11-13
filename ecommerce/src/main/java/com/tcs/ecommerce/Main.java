@@ -11,6 +11,7 @@ import com.tcs.ecommerce.service.ProductServiceImpl;
 public class Main {
 
 	public static void main(String [] args) {
+		/**
 		Product product = new Product(2, "laptop", "i5 10th gen", 123.0f, "laptop");
 		
 		ProductService productService = ProductServiceImpl.getInstance();
@@ -32,6 +33,6 @@ public class Main {
 		else {
 			System.out.println("product is not available");
 		}
-		
+		*/
 	}
 }

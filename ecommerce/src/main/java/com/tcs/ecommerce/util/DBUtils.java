@@ -6,12 +6,15 @@ import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
+// whenever we come across to utility classes, the we should mark these casses with @Component
+@Component
 public class DBUtils {
 	
-	@Autowired
-	private static Environment environment;
-	public static Connection getConnection() {
+	//@Autowired
+	//private static Environment environment;
+	public  Connection getConnection() {
 		Connection connection = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -26,7 +29,7 @@ public class DBUtils {
 		return connection;
 	}
 	
-	public static void closeConnection(Connection connection) {
+	public void closeConnection(Connection connection) {
 		try {
 			connection.close();
 		} catch (SQLException e) {
