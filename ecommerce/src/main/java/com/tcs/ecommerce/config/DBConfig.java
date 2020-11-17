@@ -12,9 +12,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories("com.tcs.ecommerce.repository")
 @PropertySource("classpath:db.properties")
 @ComponentScan("com.tcs.ecommerce")
 public class DBConfig {
@@ -46,6 +50,8 @@ public class DBConfig {
 		properties.setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
 		properties.setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
 		
+		// entity class location
+		entityManagerFactoryBean.setPackagesToScan("com.tcs.ecommerce.model");
 		entityManagerFactoryBean.setJpaProperties(properties);
 		
 		return entityManagerFactoryBean;
