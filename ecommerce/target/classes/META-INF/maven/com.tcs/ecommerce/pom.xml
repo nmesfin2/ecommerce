@@ -8,6 +8,28 @@
 	<maven.compiler.source>1.8</maven.compiler.source>
   </properties>
   <dependencies>
+  
+	  <dependency>
+	    <groupId>org.javassist</groupId>
+	    <artifactId>javassist</artifactId>
+	    <version>3.23.1-GA</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>2.1</version>
+	</dependency>
+	
+  	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-slf4j-impl</artifactId>
+	    <version>2.14.0</version>
+	    <scope>test</scope>
+	</dependency>
+	  	
 	 <dependency>
 	   <groupId>org.springframework.data</groupId>
 	   <artifactId>spring-data-jpa</artifactId>
@@ -38,7 +60,7 @@
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context</artifactId>
-	    <version>5.2.5.RELEASE</version>
+	    <version>5.0.5.RELEASE</version>
 	</dependency>
 	  	
   	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
