@@ -19,7 +19,7 @@ public class MainSpring {
 		*/
 		ProductService productService = context.getBean(ProductService.class);
 		ProductService productService2 = context.getBean(ProductService.class);
-		Product product = new Product(8 ,"laptop", "i5 10th gen", 123.0f, "laptop");
+		Product product = new Product(5 ,"laptop modified", "i5 10th gen", 123.0f, "mac");
 		String result = productService.createProduct(product);
 		System.out.println(result);
 		System.out.println(productService.equals(productService2));

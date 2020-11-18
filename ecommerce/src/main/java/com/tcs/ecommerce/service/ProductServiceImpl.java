@@ -1,5 +1,6 @@
 package com.tcs.ecommerce.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,19 @@ public class ProductServiceImpl implements ProductService {
 		// TODO Auto-generated method stub
 		//return productDAO.getProductById(id);
 		return productRepository.findById(id);
+	}
+
+	@Override
+	public void deleteProduct(int id) {
+		// TODO Auto-generated method stub
+		productRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public Optional<List<Product>> getProducts() {
+		// TODO Auto-generated method stub
+		return Optional.ofNullable(productRepository.findAll());
 	}
 
 }
