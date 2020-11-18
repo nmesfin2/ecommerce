@@ -55,4 +55,11 @@ public class ProductServiceImpl implements ProductService {
 		return Optional.ofNullable(productRepository.findAll());
 	}
 
+	@Override
+	public Optional<List<Product>> getProductsByCategory(String cat) {
+		// TODO Auto-generated method stub
+		return Optional.ofNullable(productRepository.findByCategory(cat));
+	
+	}
+
 }
