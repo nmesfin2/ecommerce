@@ -19,11 +19,17 @@ public class MainSpring {
 		*/
 		ProductService productService = context.getBean(ProductService.class);
 		ProductService productService2 = context.getBean(ProductService.class);
-		Product product = new Product(7 ,"laptop", "i5 10th gen", 123.0f, "laptop");
+		Product product = new Product(8 ,"laptop", "i5 10th gen", 123.0f, "laptop");
 		String result = productService.createProduct(product);
 		System.out.println(result);
 		System.out.println(productService.equals(productService2));
 		System.out.println(productService == productService2);
+		
+		if(productService.getProductById(5).isPresent()) {
+			System.out.println("product exist");
+		}else {
+			System.out.println("not available");
+		}
 		context.close();
 	}
 }
